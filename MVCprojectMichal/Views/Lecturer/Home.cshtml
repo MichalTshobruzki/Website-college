@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <center>
+        <title>Home-Lecturer</title>
+</head>
+<body>
+    <div>
+
+        <h1 style="color:hotpink">Welcome To SCE SW Department !</h1><br />
+        @if (Session["Id"] != null)
+        {
+
+            <h2 style="color:palevioletred">Hi Lecturer!</h2>
+            <br /><h2 style="color:white">Menu:<br /></h2>
+            <h4>
+    @Html.ActionLink("Schedule", "Schedule", "Lecturer")
+    </h4>
+    <br />
+}
+
+        <i style="color:red">@TempData["success"]</i><br />
+
+
+</div>
+</body>
+
+</html></center>
+
+
+<div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <center> @Html.ActionLink("Log-Off", "LogOff", "Home")</center>
+</div>

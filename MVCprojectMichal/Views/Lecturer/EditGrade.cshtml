@@ -1,0 +1,93 @@
+﻿@model MVCprojectMichal.Models.Students
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "EditGrade";
+}
+
+@*<h2>EditGrade</h2>*@
+<center><h1 style="color: hotpink">Edit Grades</h1><br /></center>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h4>Students</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.HiddenFor(model => model.CourseName)
+
+        <div class="form-group">
+            <font color="white">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </font>
+        </div>
+
+        <div class="form-group">
+            <font color="white">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </font>
+        </div>
+
+        <div class="form-group">
+            <font color="white">
+                @Html.LabelFor(model => model.GradeMoedA, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GradeMoedA, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GradeMoedA, "", new { @class = "text-danger" })
+                </div>
+            </font>
+        </div>
+
+        <div class="form-group">
+            <font color="white">
+                @Html.LabelFor(model => model.GradeMoedB, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.GradeMoedB, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.GradeMoedB, "", new { @class = "text-danger" })
+                </div>
+            </font>
+        </div>
+
+        <div class="form-group">
+            <font color="white">
+                @Html.LabelFor(model => model.FinalGrade, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FinalGrade, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FinalGrade, "", new { @class = "text-danger" })
+                </div>
+            </font>
+        </div>
+
+        <div class="form-group">
+            <font color="white">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </font>
+        </div>
+    </div>
+}
+    <center>
+        <br /><br /> <br /><br /> <br /><br /><div>
+            <td>
+                @Html.ActionLink("Back to Home page", "Home")
+            </td>
+        </div>
+        <div>
+            @Html.ActionLink("Log-Off", "LogOff", "Home")
+
+
+        </div>
+    </center>

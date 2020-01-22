@@ -1,0 +1,97 @@
+﻿@model MVCprojectMichal.Models.Exams
+
+@{
+    ViewBag.Title = "EditExam";
+}
+
+<center><h2 style="color:hotpink">Edit Exams</h2><br /></center>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h4>Exams</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CourseId)
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.CourseName, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.CourseName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.CourseName, "", new { @class = "text-danger" })
+    </div></font>
+</div>
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.MoedADate, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.MoedADate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MoedADate, "", new { @class = "text-danger" })
+    </div>
+</font>
+</div>
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.ClassA, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.ClassA, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ClassA, "", new { @class = "text-danger" })
+    </div>
+</font>
+</div>
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.HoursA, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.HoursA, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.HoursA, "", new { @class = "text-danger" })
+    </div>
+</font>
+</div>
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.MoedBDate, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.MoedBDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MoedBDate, "", new { @class = "text-danger" })
+    </div>
+</font>
+</div>
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.ClassB, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.ClassB, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ClassB, "", new { @class = "text-danger" })
+    </div>
+</font>
+</div>
+
+        <div class="form-group"><font color="white">
+    @Html.LabelFor(model => model.HoursB, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.HoursB, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.HoursB, "", new { @class = "text-danger" })
+    </div>
+</font>
+</div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+    <center>
+        <div>
+            <br /><br /><br />
+            @Html.ActionLink("Back to Home", "Home")
+        </div>
+        <div>
+            
+            @Html.ActionLink("Log-Off", "LogOff", "Home")
+  
+</div>  </center>

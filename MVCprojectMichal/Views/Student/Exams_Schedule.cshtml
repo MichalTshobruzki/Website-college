@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MVCprojectMichal.Models.JoinStudents_Exams>
+@{
+    ViewBag.Title = "Exams_Schedule";
+}
+
+<center>
+    @*<h2>Exams Schedule</h2>*@
+    <h1 style="color:hotpink">Exams Schedule</h1><br />
+    <table class="table">
+        <tr>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.CourseName)
+</font></th>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.MoedADate)
+</font></th>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.ClassA)
+</font></th>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.HoursA)
+</font></th>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.MoedBDate)
+</font></th>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.ClassB)
+</font></th>
+            <th><font color="white">
+    @Html.DisplayNameFor(model => model.HoursB)
+</font></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.CourseName)
+</font></td>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.MoedADate)
+</font></td>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.ClassA)
+</font></td>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.HoursA)
+</font></td>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.MoedBDate)
+</font></td>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.ClassB)
+</font></td>
+                <td><font color="white">
+    @Html.DisplayFor(modelItem => item.HoursB)
+</font></td>
+            </tr>
+        }
+
+    </table>
+</center>
+
+<div>
+    @Html.ActionLink("Back to Home page", "Home")
+</div>

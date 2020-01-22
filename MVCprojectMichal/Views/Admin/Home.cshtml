@@ -1,0 +1,49 @@
+﻿@{
+    Layout = Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <center>
+        <title>Home-Admin</title>
+</head>
+<body>
+    <div>
+
+        <h1 style="color:hotpink">Welcome To SCE SW Department !</h1><br />
+        @if (Session["Id"] != null)
+        {
+            <br />
+            <h2 style="color:palevioletred">Hi Faculty Administrator!</h2>
+            <br /><br /><h2 style="color:white">Menu:</h2>
+            <h4>
+                @Html.ActionLink("Add New Course", "AddCourses", "Admin")
+                <br />
+                <br />
+                @Html.ActionLink("View all Courses", "ShowCourses", "Admin")
+                <br />
+                <br />
+                @Html.ActionLink("Add New Students", "AddStudents", "Admin")
+                <br /><br />
+                @Html.ActionLink("View all Exams", "ShowExams", "Admin")
+                <br /><br />
+                @Html.ActionLink("View all Students", "ShowStudents", "Admin")
+            </h4>
+        }
+
+        <i style="color:red">@TempData["success"]</i><br />
+
+
+    </div>
+</body>
+</html></center>
+<center>
+
+    <div>
+        <br /><br /><br /><br /><br /><br />
+        @Html.ActionLink("Log-Off", "LogOff", "Home")
+    </div>
+</center>

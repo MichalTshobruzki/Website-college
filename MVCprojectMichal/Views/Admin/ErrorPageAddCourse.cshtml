@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "ErrorPageAddCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center>
+    <br /><br /><br />
+                <h2 style="color: snow">The Lecturer has Lecture in this time!</h2><br />
+    <td>
+        <h4>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br />
+            @Html.ActionLink("Add New Course", "AddCourses", "Admin")
+            <br /><br />
+            @Html.ActionLink("Back to Home page", "Home")
+        </h4>
+    </td>
+</center>
+
+
+<div>
+    <br />
+    <center> <button class="open">@Html.ActionLink("Log-Off", "LogOff", "Home")</button></center>
+    <br />
+</div>

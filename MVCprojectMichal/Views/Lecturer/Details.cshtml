@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MVCprojectMichal.Models.Students>
+
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Details";
+}
+
+<center><h1 style="color: hotpink">Details</h1><br /></center>
+
+<table class="table">
+    <font color="white">
+        <tr>
+            <th>
+                <font color="white">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </font>
+            </th>
+            <th>
+                <font color="white">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </font>
+            </th>
+            <th>
+                <font color="white">
+                    @Html.DisplayNameFor(model => model.Id)
+                </font>
+            </th>
+            <th>
+                <font color="white">
+                    @Html.DisplayNameFor(model => model.FinalGrade)
+                </font>
+            </th>
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    <font color="white">
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </font>
+                </td>
+                <td>
+                    <font color="white">
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </font>
+                </td>
+                <td>
+                    <font color="white">
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </font>
+                </td>
+                <td>
+                    <font color="white">
+                        @Html.DisplayFor(modelItem => item.FinalGrade)
+                    </font>
+                </td>
+                <td>
+                    <font color="white">
+                        @Html.ActionLink("Edit Grade", "EditGrade", new { id = item.Id, course = item.CourseName })
+                    </font>
+                </td>
+            </tr>
+        }
+
+</table>
+<center>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div> <td>
+        @Html.ActionLink("Back to Home page", "Home")
+    </td>
+    </div>
+    <div>
+        @Html.ActionLink("Log-Off", "LogOff", "Home")
+
+    </div>
+</center>

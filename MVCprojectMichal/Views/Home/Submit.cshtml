@@ -1,0 +1,33 @@
+﻿@model MVCprojectMichal.ViewModel.UsersViewModel
+@using MVCprojectMichal.Models
+@{
+
+   Layout = "~/Views/Shared/_Layout.cshtml";
+   ViewBag.Title = "Submit";
+}
+
+
+<center>
+    <br /><br /><br />
+    <h1 style="color: hotpink">Log in to your site</h1><br />
+    <div>
+
+        <form action="Submit" method="post">
+            <br /><br /><br />
+            <label><font color="white">UserName:</font></label> <input id="UserName" name="UserName" type="text" /> @Html.ValidationMessageFor(x => x.user.UserName)
+            <br />
+            <label><font color="white">Password:</font></label> <input id="Password" name="Password" type="text" />@Html.ValidationMessageFor(x => x.user.Password)
+            <br />
+            <br />
+            <br />
+            <input id="Submit" type="submit" value="Enter" />
+            <br /> <br /> <br /> <br /> <br /> <br /><br /> <br /> <br />=<br /> <br /><br /> <br /><br /> <br />
+
+        </form>
+
+    </div>
+</center>
+
+
+
+

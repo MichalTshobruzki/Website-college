@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MVCprojectMichal.Models.Students>
+
+@{
+    ViewBag.Title = "ShowStudents";
+}
+
+<center><h1 style="color:hotpink">Show Students</h1><br /></center>
+
+<table class="table">
+    <tr>
+        <th><font color="white">
+    @Html.DisplayNameFor(model => model.FirstName)
+</font></th>
+        <th><font color="white">
+    @Html.DisplayNameFor(model => model.LastName)
+</font></th>
+        <th><font color="white">
+    @Html.DisplayNameFor(model => model.CourseName)
+</font></th>
+        <th><font color="white">
+    @Html.DisplayNameFor(model => model.GradeMoedA)
+</font></th>
+        <th><font color="white">
+    @Html.DisplayNameFor(model => model.GradeMoedB)
+</font></th>
+        <th><font color="white">
+    @Html.DisplayNameFor(model => model.FinalGrade)
+</font></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><font color="white">
+    @Html.DisplayFor(modelItem => item.FirstName)
+</font></td>
+            <td><font color="white">
+    @Html.DisplayFor(modelItem => item.LastName)
+</font></td>
+            <td><font color="white">
+    @Html.DisplayFor(modelItem => item.CourseName)
+</font></td>
+            <td><font color="white">
+    @Html.DisplayFor(modelItem => item.GradeMoedA)
+</font></td>
+            <td><font color="white">
+    @Html.DisplayFor(modelItem => item.GradeMoedB)
+</font></td>
+            <td><font color="white">
+    @Html.DisplayFor(modelItem => item.FinalGrade)
+</font></td>
+            <td>
+                @Html.ActionLink("Edit Student", "EditStudent", new { id = item.Id, course = item.CourseName }) 
+               
+            </td>
+        </tr>
+    }
+
+</table>
+
+<center>
+    <div>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+        @Html.ActionLink("Back to Home page", "Home")
+    </div>
+    <div>
+        
+        @Html.ActionLink("Log-Off", "LogOff", "Home")
+
+    </div>
+</center>

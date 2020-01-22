@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ErrorPage";
+}
+
+<h2>The course already exist!</h2>
+
+<br />
+    @Html.ActionLink("Add New Course", "AddCourses", "Admin")
+<br />
+
+<td>
+    @Html.ActionLink("Back to Home page", "Home")
+</td>
+<div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <center> <button class="btn btn-primary btn-lg">@Html.ActionLink("Log-Off", "LogOff", "Home")</button></center>
+</div>
